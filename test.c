@@ -1,38 +1,27 @@
-#pragma once
-#include"LinkList.h"
+#include"CommentConvert.h"
 
-//void Test()
-//{
-//	SeqListR seqList;
-//	SeqListInit(&seqList);
-//	SeqListPushBack(&seqList, 1);
-//	SeqListPushBack(&seqList, 2);
-//	SeqListPushBack(&seqList, 3);
-//	SeqListPrint(&seqList);
-//	SeqListPushFront(&seqList, 11);
-//	SeqListPushFront(&seqList, 12);
-//	SeqListPushFront(&seqList, 13);
-//	SeqListPrint(&seqList);
-//}
-
-void Test()
+void test()
 {
-	pFirst ppFirst = NULL;
-	pFirst pFirst = NULL;
-	LinkListInit(&ppFirst);
-
-	LinkListPushBack(&ppFirst, 1);
-	LinkListPushBack(&ppFirst, 2);
-	LinkListPushBack(&ppFirst, 3);
-	LinkListPushBack(&ppFirst, 4);
-	PrintLinkList(pFirst);
-	ReverseLinkList(&pFirst);
-	LinkListDestroy(&ppFirst);
+	FILE* pRead = fopen("input.c", "r");
+	if (pRead == NULL)
+	{
+		perror("error for pRead");
+		exit(EXIT_FAILURE);
+	}
+	FILE* pWrite = fopen("output.c", "w");
+	if (pWrite == NULL)
+	{
+		perror("error for pWrite");
+		exit(EXIT_FAILURE);
+	}
+	CommentConvert(pRead, pWrite);
+	fclose(pRead);
+	pRead = NULL;
+	fclose(pWrite);
+	pWrite = NULL;
 }
-
 int main()
 {
-	//Test();
-	Test();
-	return 0;
+	test();
+	return  0;
 }
