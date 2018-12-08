@@ -31,6 +31,8 @@
 //	case 2:
 //		printf("短作业优先算法模拟:\n");
 //		GetInfo();
+//		p = head;
+//		SJF();
 //		break;
 //	case 3:
 //		printf("优先级调度算法模拟:\n");
@@ -53,5 +55,9 @@ int main()
 	GetInfo();
 	p = head;
 	FCFS();
+	printf("短作业优先算法模拟:\n");
+	GetInfo();
+	p = head;
+	SJF();
 	return 0;
 }
