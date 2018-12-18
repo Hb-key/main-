@@ -1,7 +1,7 @@
 //#include<iostream>
 //using namespace std;
 //
-////ÆÕÍ¨µÄÃüÃû¿Õ¼ä
+////æ™®é€šçš„å‘½åç©ºé—´
 //namespace  N
 //{
 //	int a = 10;
@@ -21,7 +21,7 @@
 //	printf("%d\n", a);
 //	return 0;
 //}
-//Ç¶Ì×ÃüÃû¿Õ¼ä
+//åµŒå¥—å‘½åç©ºé—´
 //namespace N2
 //{
 //	int a = 20;
@@ -70,7 +70,6 @@
 //void Test()
 //{
 //	int a = 10;
-//	int &ra;//»á±¨´í£¬±äÁ¿raĞèÒª³õÊ¼»¯
 //	int &ra = a;
 //	int &rra = a;
 //	cout << &a << &ra << &rra << endl;
@@ -78,12 +77,12 @@
 //void Test()
 //{
 //	const int a = 10;
-//	//int& ra = a;  // ±àÒëÊ±³ö´í£¬aÎª³£Á¿ 
+//	//int& ra = a;  // ç¼–è¯‘æ—¶å‡ºé”™ï¼Œaä¸ºå¸¸é‡ 
 //	const int& ra = a; 
-//	//int& rb = b; // ±àÒëÊ±³ö´í£¬bÎª³£Á¿ 
+//	//int& rb = b; // ç¼–è¯‘æ—¶å‡ºé”™ï¼Œbä¸ºå¸¸é‡ 
 //	const int& rb = b;
 //	double c = 12.34;
-//	//int &rc = c;   // ±àÒëÊ±³ö´í£¬ÀàĞÍ²»Í¬ 
+//	//int &rc = c;   // ç¼–è¯‘æ—¶å‡ºé”™ï¼Œç±»å‹ä¸åŒ 
 //	const int &rc = c;
 //}
 
@@ -111,8 +110,6 @@
 //	int& ret = Add(1, 2);
 //	return 0;
 //}
-//#include <time.h> 
-//
 //struct A
 //{
 //	int a[100000];
@@ -135,13 +132,13 @@
 //		TestFun1();
 //	size_t end1 = clock();
 //
-//	// ÒÔÒıÓÃ×÷Îªº¯Êı²ÎÊı    
+//	// ä»¥å¼•ç”¨ä½œä¸ºå‡½æ•°å‚æ•°    
 //	size_t begin2 = clock();
 //	for (size_t i = 0; i < 100000; ++i)
 //		TestFun2();
 //	size_t end2 = clock();
 //
-//	// ¼ÆËãÁ½¸öº¯ÊıÔËĞĞ½áÊøºóµÄÊ±¼ä    
+//	// è®¡ç®—ä¸¤ä¸ªå‡½æ•°è¿è¡Œç»“æŸåçš„æ—¶é—´    
 //	cout << "TestFunc1(int*):" << end1 - begin1 << endl;
 //	cout << "TestFunc2(int&):" << end2 - begin2 << endl;
 //	cout << "=======================\n";
