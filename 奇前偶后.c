@@ -23,7 +23,7 @@
 // 			arr[right] = tmp;
 // 		}
 // 	}
-// 	printf("数组变换后：\n");
+// 	printf("鏁扮粍鍙樻崲鍚庯細\n");
 //	for(i=0; i<sz; i++)
 //	{
 //		printf("%d ",arr[i]);
@@ -107,13 +107,13 @@
 //	int k = 0;
 //	int x = 3;
 //	int y = 3;
-//	printf("请输入要查找的数:");
+//	printf("璇疯緭鍏ヨ鏌ユ壘鐨勬暟:");
 //	scanf("%d",&k); 
 //	int ret = Find(arr, &x, &y, k);
-//	printf("横坐标为:%d 纵坐标为:%d\n", x, y);
+//	printf("妯潗鏍囦负:%d 绾靛潗鏍囦负:%d\n", x, y);
 //	return 0;
 //}
-
+//
 
 
 
