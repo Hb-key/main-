@@ -5,6 +5,7 @@
 //	head->prev = node;
 //	node->perv = head->prev;
 //	node->next = head;
+//
 //} 
 
 #include"List.h"
@@ -30,7 +31,7 @@ void SeqListPushFront(SeqListR *pSeq, DataType data)
 	assert(pSeq != NULL);
 	if (pSeq->size == MAX_SIZE)
 	{
-		printf("ÒÑÂú\n");
+		printf("Ã’Ã‘Ã‚Ãº\n");
 		return;
 	}
 	for (int i = pSeq->size - 1; i >= 0; i--)
@@ -46,7 +47,7 @@ void SeqListPushBack(SeqListR *pSeq, DataType data)
 	assert(pSeq != NULL);
 	if (pSeq->size == MAX_SIZE)
 	{
-		printf("ÒÑÂú\n");
+		printf("Ã’Ã‘Ã‚Ãº\n");
 		return;
 	}
 	pSeq->array[pSeq->size] = data;
