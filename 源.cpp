@@ -20,7 +20,7 @@ typedef struct Num
 	int length;
 	int listsize;
 }N;
-int THE_size(char * src)//¶ÁÈ¡ÎÄ¼ş²¢ÇÒµÃµ½ÎÄ¼ş³¤¶È
+int THE_size(char * src)//è¯»å–æ–‡ä»¶å¹¶ä¸”å¾—åˆ°æ–‡ä»¶é•¿åº¦
 {
 	FILE *fr = fopen(src, " r ");//
 	if (!fr) return -1;
@@ -34,7 +34,7 @@ int THE_size(char * src)//¶ÁÈ¡ÎÄ¼ş²¢ÇÒµÃµ½ÎÄ¼ş³¤¶È
 void Write(char *src, char *str)
 {
 	FILE *fr = fopen(src, "r");
-	fread(str, sizeof(char), MAX, fr);//·µ»ØÖµÊµ¼Ê¶Á³É¹¦µÄÊı×Ö
+	fread(str, sizeof(char), MAX, fr);//è¿”å›å€¼å®é™…è¯»æˆåŠŸçš„æ•°å­—
 	printf("%s", str);
 	printf("\n");
 	fclose(fr);
@@ -55,20 +55,20 @@ void Output(char *str, N *t, int Size)
 	char tmp[40];
 	for (i = 0; i <= Size; i++)
 	{
-		if (isalpha(str[i]))//Èç¹ûÎª×Ö·û
+		if (isalpha(str[i]))//å¦‚æœä¸ºå­—ç¬¦
 		{
 			tmp[k] = str[i];
-			k++;//½«×Ö·û´®¸´ÖÆ¹ıÀ´
+			k++;//å°†å­—ç¬¦ä¸²å¤åˆ¶è¿‡æ¥
 		}
-		else//Èç¹û²»ÊÇ×Ö·ûÇÒ²»ÎªµÚÒ»Ïî(Ê¹¸´ÖÆ¹ıÀ´µÄµÚÒ»Ïî²»Îª¿Õ)
+		else//å¦‚æœä¸æ˜¯å­—ç¬¦ä¸”ä¸ä¸ºç¬¬ä¸€é¡¹(ä½¿å¤åˆ¶è¿‡æ¥çš„ç¬¬ä¸€é¡¹ä¸ä¸ºç©º)
 		{
 			if (k>0)
 			{
 				flag = 1;
 			}
-			tmp[k] = '\0';//Ê¹¸´ÖÆ¹ıÀ´µÄÄÇÒ»ÏîÎª'\0'		
+			tmp[k] = '\0';//ä½¿å¤åˆ¶è¿‡æ¥çš„é‚£ä¸€é¡¹ä¸º'\0'		
 		}
-		if (flag == 1)//µÃµ½Ã¿¸öµ¥´Ê
+		if (flag == 1)//å¾—åˆ°æ¯ä¸ªå•è¯
 		{
 			for (int m = 0; m<k + 1; m++)
 			{
@@ -88,13 +88,13 @@ void Output(char *str, N *t, int Size)
 	}*/
 	printf("%d\n", (*t).length);
 }
-int  My_strcmp(const char *str1, const char *str2)//×Ö·û´®µÄ±È½Ïstrcmp
+int  My_strcmp(const char *str1, const char *str2)//å­—ç¬¦ä¸²çš„æ¯”è¾ƒstrcmp
 {
-	assert(str1 != NULL && str2 != NULL);//¶ÏÑÔÁ½¸ö×Ö·û´®²»Îª¿Õ
-	int tmp;//²îÖµ  
-	while (((tmp = *str1 - *str2) == 0) && (*str2 != '\0'))//µ±Á½¸öÖµÏà¼õÎª0£¬ÇÒµÚ¶şÏî²»Îª0
+	assert(str1 != NULL && str2 != NULL);
+	int tmp;//å·®å€¼  
+	while (((tmp = *str1 - *str2) == 0) && (*str2 != '\0'))//å½“ä¸¤ä¸ªå€¼ç›¸å‡ä¸º0ï¼Œä¸”ç¬¬äºŒé¡¹ä¸ä¸º0
 	{
-		str1++;//Á½¸öÖ¸ÕëÍ¬Ê±ÍùÇ°×ß
+		str1++;//ä¸¤ä¸ªæŒ‡é’ˆåŒæ—¶å¾€å‰èµ°
 		str2++;
 	}
 	return tmp;
@@ -129,7 +129,7 @@ int END(N *t)
 	return n;
 }
 void InsertSort(N *t)
-{                                    //Ô½ÓĞĞòÔ½¿ì£¬ÎÈ¶¨
+{                                    //è¶Šæœ‰åºè¶Šå¿«ï¼Œç¨³å®š
 
 	int tmp = 0;
 	int j;
@@ -155,7 +155,7 @@ void InsertSort(N *t)
 	}
 }
 
-int partion(N *t, int low, int high)//Ò»´Î¿ìËÙÅÅĞòÏÂ±ê
+int partion(N *t, int low, int high)//ä¸€æ¬¡å¿«é€Ÿæ’åºä¸‹æ ‡
 {
 	while ((high - low)<1000)
 	{
@@ -197,7 +197,7 @@ int partion(N *t, int low, int high)//Ò»´Î¿ìËÙÅÅĞòÏÂ±ê
 	strcpy((*t).brr[low].arr, *tp);
 	return low;
 }
-void Quick(N *t, int low, int high, int len)//ºÃµÄÇé¿öÏÂO(N*log 2 n);»µµÄÇé¿öÏÂÎªO(n^2)£¬ÓĞĞòÇé¿öÏÂ ,²»ÎÈ¶¨
+void Quick(N *t, int low, int high, int len)//å¥½çš„æƒ…å†µä¸‹O(N*log 2 n);åçš„æƒ…å†µä¸‹ä¸ºO(n^2)ï¼Œæœ‰åºæƒ…å†µä¸‹ ,ä¸ç¨³å®š
 {
 	int par = partion(t, low, high);
 	if (par>low + 1)
@@ -231,17 +231,17 @@ int main()
 		return -1;
 	}
 	int size = THE_size(src);
-	printf("%d\n", size);//³¤¶È
+	printf("%d\n", size);//é•¿åº¦
 
 	char str[MAX] = " ";
 	Write(src, str);
 
 	//Ssize(str);
 	//int Size = Ssize(str);
-	//printf("%d\n",Size);//³¤¶È
+	//printf("%d\n",Size);//é•¿åº¦
 
 	N t;
-	t.brr = (Word*)malloc(size * sizeof(Word));//´æ·Å½á¹¹Ìåword
+	t.brr = (Word*)malloc(size * sizeof(Word));//å­˜æ”¾ç»“æ„ä½“word
 	memset(t.brr, 0, size * sizeof(Word));
 	t.length = 0;
 
