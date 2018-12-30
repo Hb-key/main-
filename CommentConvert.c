@@ -121,8 +121,8 @@ void Do_C_state(FILE *pRead, FILE *pWrite, State *state)
 		break;
 	}
 }
-
-void DO_Cpp_state(FILE *pRead, FILE *pWrite, State *state)
+// C ++风格
+void  DO_Cpp_state（FILE  * pRead，FILE  * pWrite，State  * state）
 {
 	int first = fgetc(pRead);
 	switch (first)
