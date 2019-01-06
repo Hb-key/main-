@@ -5,10 +5,10 @@
 
 struct student
 {
-	int num;
+	char num[20];
 	char name[20];
 	char spec[20];
-	int  grade;
+	int  score;
 	char sex[20];
 };
 
@@ -19,4 +19,4 @@ void Delete(struct student *s);
 void Search(struct student *s);
 void Print(struct student *s);
 void Number(struct student *s);
-void Grade(struct student *s);
+void Score(struct student *s);
