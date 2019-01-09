@@ -21,7 +21,6 @@ void Input(struct student *s)   //输入学生信息
 
 void Print(struct student *s)   //显示学生信息
 {
-	printf("\n*****        学生信息如下        *****\n\n");
 	printf("学号\t姓名\t科目\t成绩\t性别");
 	printf("\n------------------------------------------\n");
 	for (int i = 0; i< stu_num + member; i++)
@@ -29,42 +28,33 @@ void Print(struct student *s)   //显示学生信息
 		printf("%s\t%s\t%s\t%d\t%s\n",
 			s[i].num, s[i].name, s[i].spec, s[i].score, s[i].sex);
 	}
+	printf("\n");
 }
 
-void Entry(struct student *s)
+void Entry(struct student *s)//---------------------------------Question
 {
 	char number[20];
 	printf("请输入要添加的学生数量：");
 	scanf("%d", &stu_num);
 	printf("请输入学生的信息：\n");
-	while (stu_num > 0)
+	for (int i = 0; i < stu_num; i++)
 	{
 		Input(s);
+		member++;
 	}
-	
-	for (int i = 0; i < stu_num + member; i++)
+	for (int i = 0; i < stu_num; i++)
 	{
 		if (s[i].num == number)
 		{
-			Print(s);
 			printf("该学生已存在！\n");
-			break;
-		}
-		else
-		{
-			for (int i = 0; i < stu_num; i++)
-			{
-				Input(s);
-				printf("\n");
-				member++;
-			}
+			//break;
 		}
 	}
-	for (int i = 0; i< stu_num + member; i++)
+	/*for (int i = 0; i< stu_num + member; i++)
 	{
 		printf("%s\t%s\t%s\t%d\t%s\n",
 			s[i].num, s[i].name, s[i].spec, s[i].score, s[i].sex);
-	}
+	}*/
 }
 
 void Delete(struct student *s)
