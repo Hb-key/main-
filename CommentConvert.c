@@ -66,7 +66,7 @@ void Do_NUL_state(FILE *pRead, FILE *pWrite, State *state)
 			break;
 	}
 }
-
+//C风格
 void Do_C_state(FILE *pRead, FILE *pWrite, State *state)
 {
 	int first = fgetc(pRead);
