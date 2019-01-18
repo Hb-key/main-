@@ -8,7 +8,6 @@ using namespace std;
 
 const int N = 1e3 + 10;
 
-// 变量
 int pro_num;            // 进程数
 int res_num;            // 资源数
 int Available[N];       // 可利用资源数
