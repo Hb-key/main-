@@ -156,7 +156,7 @@ void display()  //显示资源分配信息
 	}
 }
 
-bool safe_check()			//安全性检测
+bool safe_check()			//安全性检测函数
 {
 	safe_count = 1;
 	printf("-------------------安全性检测------------------\n");
