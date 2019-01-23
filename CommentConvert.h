@@ -13,13 +13,10 @@ typedef enum State
 	End_state
 }State;
 
-
+//调用函数
 void CommentConvert(FILE *pRead, FILE *pWrite);
-
 void DO_Cpp_state(FILE *pRead, FILE *pWrite, State *state);
-
 void Do_C_state(FILE *pRead, FILE *pWrite, State *state);
-
 void Do_NUL_state(FILE *pRead, FILE *pWrite, State *state);
 
 #endif   // __CommentConvert_H__   
