@@ -1,4 +1,4 @@
-//结构体
+//链表结构体
 struct ListNode
 {
 	int m_nKey;
