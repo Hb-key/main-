@@ -22,7 +22,7 @@ int main(int argc, char *argv[], char *envp[])
 	int ret = 0;
 	if(argv != 4)
 	{
-		printf("输入有误！\n");
+		printf("脢盲脠毛脫脨脦贸拢隆\n");
 		break;
 	}
 	switch(*(argv[1]+1))
@@ -40,7 +40,7 @@ int main(int argc, char *argv[], char *envp[])
 			ret = Div(atoi(argv[2]),atoi(argv[3]));
 			break;	
 		default:
-		printf("输入有误:argv[1] = %s",argv[1]);
+		printf("脢盲脠毛脫脨脦贸:argv[1] = %s",argv[1]);
 			break;	
 	}
 	printf("ret = %d\n",ret);
@@ -51,6 +51,8 @@ int main(int argc, char *argv[], char *envp[])
 
 #include<stdio.h>
 #include<string.h>
+
+//鍐掓场
 void Bubble_sort(char *arr[],int sz)
 {
 	int i,j;
