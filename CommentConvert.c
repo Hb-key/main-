@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include"CommentConvert.h"
-
+//。
 void CommentConvert(FILE *pRead, FILE *pWrite)
 {
 	State state = NUL_state;
