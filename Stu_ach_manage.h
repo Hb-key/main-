@@ -12,6 +12,7 @@ struct student
 	char sex[20];
 };
 
+//函数
 void Logic(struct student *s);
 void Entry(struct student *s);
 void Modify(struct student *s);
