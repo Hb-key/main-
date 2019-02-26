@@ -6,13 +6,13 @@
 #include <stdbool.h>
 
 typedef struct PCB {
-	char name;               //½ø³ÌÃû
-	int ArrivalTime;	     //½ø³Ì×´Ì¬
-	int ServiceTime;     	 //½ø³Ìµ½´ïÊ±¼ä
-	int StartTime;		    //½ø³Ì¿ªÊ¼Ê±¼ä
-	int FinishTime;		    //½ø³ÌÍê³ÉÊ±¼ä
-	int WholeTime;          //ÖÜ×ªÊ±¼ä
-	int weightWholeTime;    //´øÈ¨ÖÜ×ªÊ±¼ä
+	char name;               //è¿›ç¨‹å
+	int ArrivalTime;	     //è¿›ç¨‹çŠ¶æ€
+	int ServiceTime;     	 //è¿›ç¨‹åˆ°è¾¾æ—¶é—´
+	int StartTime;		    //è¿›ç¨‹å¼€å§‹æ—¶é—´
+	int FinishTime;		    //è¿›ç¨‹å®Œæˆæ—¶é—´
+	int WholeTime;          //å‘¨è½¬æ—¶é—´
+	int weightWholeTime;    //å¸¦æƒå‘¨è½¬æ—¶é—´
 }PCB;
 
 typedef PCB DataType;
@@ -24,11 +24,11 @@ typedef struct Node {
 typedef struct Queue {
 	Node *front;
 	Node *rear;
-	int size;			//¶ÓÁĞÖĞµÄÔªËØ¸öÊı
+	int size;			//é˜Ÿåˆ—ä¸­çš„å…ƒç´ ä¸ªæ•°
 }Queue;
 
 
-void QueueInit(Queue *pqueue) //³õÊ¼»¯
+void QueueInit(Queue *pqueue) //åˆå§‹åŒ–
 {			
 	assert(pqueue != NULL);
 	pqueue->front = NULL;
@@ -36,6 +36,7 @@ void QueueInit(Queue *pqueue) //³õÊ¼»¯
 	pqueue->size = 0;
 }
 
+//é”€æ¯
 void QueueDestroy(Queue *pqueue)
 {
 	Node *cur = NULL;
@@ -132,10 +133,10 @@ void FCFS(Queue *pqueue, PCB pcbs[], int size)
 
 	while (1)
 	{
-		//µÈ´ı½ø³Ì
+		//ç­‰å¾…è¿›ç¨‹
 		if ((pcbid = getPcb(pcbs, size, time)) == -1 && QueueEmpty(pqueue))
 		{
-			printf("½ø³ÌÖ´ĞĞÍê±Ï£¡\n");
+			printf("è¿›ç¨‹æ‰§è¡Œå®Œæ¯•ï¼\n");
 			break;
 		}
 		printf("time is %d \n", time);
@@ -143,7 +144,7 @@ void FCFS(Queue *pqueue, PCB pcbs[], int size)
 		{
 			QueuePush(pqueue, pcbs[pcbid]);
 		}
-		//Ö´ĞĞ½ø³Ì
+		//æ‰§è¡Œè¿›ç¨‹
 		if (curPcbServiceTime == 0)
 		{
 			if (time != 0)
@@ -163,23 +164,23 @@ void FCFS(Queue *pqueue, PCB pcbs[], int size)
 
 void RR(Queue *pqueue, PCB pcbs[], int size)
 {
-	//Ê±¼äÆ¬µÄ´óĞ¡
+	//æ—¶é—´ç‰‡çš„å¤§å°
 	int q = 2;
-	//µ±Ç°Ê±¼äÆ¬µÄÊ£ÓàÊ±¼ä
+	//å½“å‰æ—¶é—´ç‰‡çš„å‰©ä½™æ—¶é—´
 	int lessq = 0;
 	int pcbid = 0;
 
-	//±íÊ¾±¾½ø³Ì»¹ĞèÒªµÄ·şÎñÊ±¼ä
+	//è¡¨ç¤ºæœ¬è¿›ç¨‹è¿˜éœ€è¦çš„æœåŠ¡æ—¶é—´
 	int curPcbServiceTime = 0;
 	Node *cur = NULL;
 	int time = 0;
 
-	while (1)//µÈ´ı½ø³Ì
+	while (1)//ç­‰å¾…è¿›ç¨‹
 	{
 
 		if ((pcbid = getPcb(pcbs, size, time)) == -1 && QueueEmpty(pqueue))
 		{
-			printf("½ø³ÌÖ´ĞĞÍê±Ï£¡\n");
+			printf("è¿›ç¨‹æ‰§è¡Œå®Œæ¯•ï¼\n");
 			break;
 		}
 		printf("Time is %d \n", time);
@@ -187,7 +188,7 @@ void RR(Queue *pqueue, PCB pcbs[], int size)
 		{
 			QueuePush(pqueue, pcbs[pcbid]);
 		}
-		//Ö´ĞĞ½ø³Ì
+		//æ‰§è¡Œè¿›ç¨‹
 		if (lessq == 0)
 		{
 			if (curPcbServiceTime == 0)
@@ -236,7 +237,7 @@ void SJF(Queue *pqueue, PCB pcbs[], int size)
 	int i = 0, j = 0;
 	int time = 0;
 	int pcb_id = 0;
-	int minTime = 0;	// ×î¶ÌÔËĞĞÊ±¼ä
+	int minTime = 0;	// æœ€çŸ­è¿è¡Œæ—¶é—´
 
 	QueuePush(pqueue, pcbs[pcb_id]);
 	while (1)
@@ -269,7 +270,7 @@ void PSA(Queue *pqueue, PCB pcbs[], int size)
 	int j = 0;
 	int time = 0;
 	int pcb_id = 0;
-	int PriorityTime = 0;		//ÓÅÏÈ¼¶		
+	int PriorityTime = 0;		//ä¼˜å…ˆçº§		
 	QueuePush(pqueue, pcbs[pcb_id]);
 	while (1)
 	{
