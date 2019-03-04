@@ -9,7 +9,7 @@ typedef struct ListNode {
 	struct ListNode *next;
 }ListNode;
 
-//´ÓÎ²µ½Í·´òÓ¡µ¥Á´±í
+//ä»å°¾åˆ°å¤´æ‰“å°å•é“¾è¡¨
 void TailToHead(ListNode *plist)
 {
 	assert(plist);
@@ -21,7 +21,7 @@ void TailToHead(ListNode *plist)
 	printf("%d", plist->data);
 }
 
-//É¾³ıÒ»¸öÎŞÍ·µ¥Á´±íµÄ·ÇÎ²½Úµã
+//åˆ é™¤ä¸€ä¸ªæ— å¤´å•é“¾è¡¨  éå°¾èŠ‚ç‚¹
 void DeleteNoHead(ListNode *pos)
 {
 	assert(pos);
