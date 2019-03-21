@@ -4,24 +4,24 @@
 int member = 5;
 int stu_num = 0;
 
-void Input(struct student *s)   //ÊäÈëÑ§ÉúĞÅÏ¢
+void Input(struct student *s)   //è¾“å…¥å­¦ç”Ÿä¿¡æ¯
 {
 	int i = 0;
-	printf("ÊäÈëÑ§ºÅ£º");
+	printf("è¾“å…¥å­¦å·ï¼š");
 	scanf("%s", s[i].num);
-	printf("ÊäÈëĞÕÃû£º");
+	printf("è¾“å…¥å§“åï¼š");
 	scanf("%s", s[i].name);
-	printf("ÊäÈë¿ÆÄ¿£º");
+	printf("è¾“å…¥ç§‘ç›®ï¼š");
 	scanf("%s", s[i].spec);
-	printf("ÊäÈë³É¼¨£º");
+	printf("è¾“å…¥æˆç»©ï¼š");
 	scanf("%d", &s[i].score);
-	printf("ÊäÈëĞÔ±ğ£º");
+	printf("è¾“å…¥æ€§åˆ«ï¼š");
 	scanf("%s", s[i].sex);
 }
 
-void Print(struct student *s)   //ÏÔÊ¾Ñ§ÉúĞÅÏ¢
+void Print(struct student *s)   //æ˜¾ç¤ºå­¦ç”Ÿçš„ä¿¡æ¯
 {
-	printf("Ñ§ºÅ\tĞÕÃû\t¿ÆÄ¿\t³É¼¨\tĞÔ±ğ");
+	printf("å­¦å·\tå§“å\tç§‘ç›®\tæˆç»©\tæ€§åˆ«");
 	printf("\n------------------------------------------\n");
 	for (int i = 0; i< stu_num + member; i++)
 	{
@@ -34,9 +34,9 @@ void Print(struct student *s)   //ÏÔÊ¾Ñ§ÉúĞÅÏ¢
 void Entry(struct student *s)//---------------------------------Question
 {
 	char number[20];
-	printf("ÇëÊäÈëÒªÌí¼ÓµÄÑ§ÉúÊıÁ¿£º");
+	printf("è¯·è¾“å…¥è¦æ·»åŠ çš„å­¦ç”Ÿæ•°é‡ï¼š");
 	scanf("%d", &stu_num);
-	printf("ÇëÊäÈëÑ§ÉúµÄĞÅÏ¢£º\n");
+	printf("è¯·è¾“å…¥å­¦ç”Ÿçš„ä¿¡æ¯ï¼š\n");
 	for (int i = 0; i < stu_num; i++)
 	{
 		Input(s);
@@ -46,7 +46,7 @@ void Entry(struct student *s)//---------------------------------Question
 	{
 		if (s[i].num == number)
 		{
-			printf("¸ÃÑ§ÉúÒÑ´æÔÚ£¡\n");
+			printf("è¯¥å­¦ç”Ÿå·²å­˜åœ¨ï¼\n");
 			//break;
 		}
 	}
@@ -60,57 +60,57 @@ void Entry(struct student *s)//---------------------------------Question
 void Delete(struct student *s)
 {
 	char number[20];
-	printf("ÇëÊäÈëÒªÉ¾³ıÑ§ÉúµÄÑ§ºÅ£º");
+	printf("è¯·è¾“å…¥è¦åˆ é™¤å­¦ç”Ÿçš„å­¦å·ï¼š");
 	scanf("%s", number);
-	//ÅĞ¶Ï¸ÃÑ§ÉúĞÅÏ¢ÊÇ·ñÒÑÂ¼Èë
+	//åˆ¤æ–­è¯¥å­¦ç”Ÿä¿¡æ¯æ˜¯å¦å·²å½•å…¥
 	for (int i = 0; i< stu_num + member; i++)
 	{
 		if (s[i].num == number)
 		{
 			Print(s);
-			//É¾³ı
+			//åˆ é™¤
 			s[i] = s[i + 1];
 			member--;
-			printf("¸ÃÑ§ÉúÒÑÉ¾³ı£¡\n");
+			printf("è¯¥å­¦ç”Ÿå·²åˆ é™¤ï¼\n");
 			return;
 		}
 	}
-	printf("¸ÃÑ§Éú²»´æÔÚ£¡\n");
+	printf("è¯¥å­¦ç”Ÿä¸å­˜åœ¨ï¼\n");
 }
 
 void Modify(struct student *s)
 {
 	int number = 0;
-	printf("ÇëÊäÈëÒªĞŞ¸ÄÑ§ÉúµÄÑ§ºÅ£º");
+	printf("è¯·è¾“å…¥è¦ä¿®æ”¹å­¦ç”Ÿçš„å­¦å·ï¼š");
 	scanf("%d", &number);
-	//ÅĞ¶Ï¸ÃÑ§ÉúĞÅÏ¢ÊÇ·ñÒÑÂ¼Èë
+	//åˆ¤æ–­è¯¥å­¦ç”Ÿä¿¡æ¯æ˜¯å¦å·²å½•å…¥
 	for (int i = 0; i< stu_num + member; i++)
 	{
 		if (s[i].num == number)
 		{
 			Print(s);
-			printf("ĞÂÑ§ÉúµÄĞÅÏ¢Â¼Èë£º\n");
+			printf("æ–°å­¦ç”Ÿçš„ä¿¡æ¯å½•å…¥ï¼š\n");
 			Input(s);
 			Print(s);
 			return;
 		}
 	}
-	printf("¸ÃÑ§Éú²»´æÔÚ£¡\n");
+	printf("è¯¥å­¦ç”Ÿä¸å­˜åœ¨ï¼\n");
 }
 
 void menu_search()
 {
 	printf("************************************\n");
-	printf("*******     1¡¢°´Ñ§ºÅ²éÑ¯   ********\n");
-	printf("*******     2¡¢°´³É¼¨²éÑ¯   ********\n");
+	printf("*******     1ã€æŒ‰å­¦å·æŸ¥è¯¢   ********\n");
+	printf("*******     2ã€æŒ‰æˆç»©æŸ¥è¯¢   ********\n");
 	printf("************************************\n");
-	printf("ÇëÑ¡Ôñ£º");
+	printf("è¯·é€‰æ‹©ï¼š");
 }
 
 void Number(struct student *s)
 {
 	int number = 0;
-	printf("ÇëÊäÈëÒª²éÑ¯Ñ§ÉúµÄÑ§ºÅ£º");
+	printf("è¯·è¾“å…¥è¦æŸ¥è¯¢å­¦ç”Ÿçš„å­¦å·ï¼š");
 	scanf("%d", &number);
 	for (int i = 0; i< stu_num + 5; i++)
 	{
@@ -121,7 +121,7 @@ void Number(struct student *s)
 		}
 		else 
 		{
-			printf("²éÎŞ´ËÈË£¡\n");
+			printf("æŸ¥æ— æ­¤äººï¼\n");
 		}
 	}
 }
@@ -130,7 +130,7 @@ void Number(struct student *s)
 void Score(struct student *s)
 {
 	int score = 0;
-	printf("ÇëÊäÈëÒª²éÑ¯Ñ§ÉúµÄ³É¼¨£º");
+	printf("è¯·è¾“å…¥è¦æŸ¥è¯¢å­¦ç”Ÿçš„æˆç»©ï¼š");
 	scanf("%d", &score);
 	for (int i = 0; i< stu_num + 5; i++)
 	{
@@ -142,7 +142,7 @@ void Score(struct student *s)
 		}
 		else 
 		{
-			printf("²éÎŞ´ËÈË£¡\n");
+			printf("æŸ¥æ— æ­¤äººï¼\n");
 
 		}
 	}
@@ -162,7 +162,7 @@ void Search(struct student *s)
 		Score(s);
 		break;
 	default:
-		printf("ÊäÈëÓĞÎó£¡\n");
+		printf("è¾“å…¥æœ‰è¯¯ï¼\n");
 		break;
 	}
 }
