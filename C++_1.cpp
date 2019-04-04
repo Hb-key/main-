@@ -16,6 +16,7 @@
 //	}
 //}
 //using N::a;
+
 //int main()
 //{
 //	printf("%d\n", a);
@@ -158,8 +159,4 @@ using namespace std;
 void test(int)
 {
 	cout << test() << endl;
-}
-void test(int *)
-{
-	cout << test(int *) << endl;
 }
