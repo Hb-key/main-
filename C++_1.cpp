@@ -17,11 +17,7 @@
 //}
 //using N::a;
 
-//int main()
-//{
-//	printf("%d\n", a);
-//	return 0;
-//}
+
 //嵌套命名空间
 //namespace N2
 //{
