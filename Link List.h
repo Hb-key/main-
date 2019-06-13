@@ -21,7 +21,7 @@ void TailToHead(ListNode *plist)
 	printf("%d", plist->data);
 }
 
-//删除一个无头单链表  非尾节点
+//删除一个无头单链表非尾节点
 void DeleteNoHead(ListNode *pos)
 {
 	assert(pos);
@@ -29,5 +29,4 @@ void DeleteNoHead(ListNode *pos)
 	ListNode *next = pos->next;
 	cur->data = next->data;
 	cur->next = next->next;
-
 }
